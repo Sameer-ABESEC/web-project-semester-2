@@ -1,79 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
-</head>
-<body>
-    <button class="btn btn-primary">Click Me</button>
-    <button type="button" class="btn btn-primary">Primary</button>
-    <button type="button" class="btn btn-secondary">Secondary</button>
-    <button type="button" class="btn btn-success">Success</button>
-    <button type="button" class="btn btn-danger">Danger</button>
-    <button type="button" class="btn btn-warning">Warning</button>
-    <button type="button" class="btn btn-info">Info</button>
-    <button type="button" class="btn btn-light">Light</button>
-    <button type="button" class="btn btn-dark">Dark</button>
-    <button type="button" class="btn btn-link">Link</button>
-    <br><br>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon Clone</title>
 
-    <div class="container-fluid">
-    <!-- Content here -->
-    Hello CSE 22
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis illo mollitia dolor ab dolore! Ducimus enim dolore recusandae repellat! Sed repellendus sapiente soluta? Doloribus, delectus. Repellendus itaque eaque voluptate neque!
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, animi? Aspernatur, architecto! Error est quasi accusantium doloremque distinctio rerum? Ipsam aspernatur eius ut nisi dolor tenetur quaerat laborum incidunt quibusdam?
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis illo mollitia dolor ab dolore! Ducimus enim dolore recusandae repellat! Sed repellendus sapiente soluta? Doloribus, delectus. Repellendus itaque eaque voluptate neque!
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, animi? Aspernatur, architecto! Error est quasi accusantium doloremque distinctio rerum? Ipsam aspernatur eius ut nisi dolor tenetur quaerat laborum incidunt quibusdam?
-    </div>
-    <br><br>
-    <!-- Main Container -->
-    <div class="container mt-5">
-        <!-- Header Section -->
-        <header class="text-center mb-4">
-            <h1 class="text-primary">Welcome to Bootstrap</h1>
-            <p class="text-muted">Building beautiful websites has never been easier</p>
-        </header>
-        <!-- Card Component -->
-        <div class="card shadow-sm">
-            <div class="card-body">
-                <h5 class="card-title">What is Bootstrap?</h5>
-                <p class="card-text">
-                    Bootstrap is the world's most popular CSS framework for building 
-                    responsive, mobile-first websites. It provides pre-built components 
-                    and a powerful grid system.
-                </p>
-                <button class="btn btn-success">Learn More</button>
-                <button class="btn btn-outline-primary">Get Started</button>
-            </div>
-        </div>
-        <!-- Grid System Example -->
-        <div class="row mt-4">
-            <div class="col-md-4">
-                <div class="p-3 bg-light border rounded">
-                    <h6>Fast Development</h6>
-                    <p>Build websites 10x faster with pre-built components.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-3 bg-light border rounded">
-                    <h6>Responsive Design</h6>
-                    <p>Your site looks great on all devices automatically.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-3 bg-light border rounded">
-                    <h6>Open Source</h6>
-                    <p>Free to use with an active community of developers.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Bootstrap JavaScript Bundle CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
-            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" 
-            crossorigin="anonymous"></script>
-  
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+
+<div class="logo">
+amazon
+</div>
+
+<div class="search-box">
+<input type="text"
+id="search"
+placeholder="Search Amazon"
+onkeyup="searchProducts()">
+
+<button>
+<i class="fa-solid fa-magnifying-glass"></i>
+</button>
+</div>
+
+<div class="nav-links">
+<a href="#">Hello, Sign In</a>
+<a href="#">Returns & Orders</a>
+
+<div class="cart-box">
+<i class="fa-solid fa-cart-shopping"></i>
+<span id="cartCount">0</span>
+</div>
+
+</div>
+
+</header>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+<h1>Welcome to Amazon </h1>
+<p>Shop Electronics, Fashion, Books and More</p>
+</section>
+
+<!-- CATEGORIES -->
+
+<h2 class="section-title">Shop By Category</h2>
+
+<div class="categories">
+
+<div class="category">
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500">
+<p>Electronics</p>
+</div>
+
+<div class="category">
+<img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500">
+<p>Fashion</p>
+</div>
+
+<div class="category">
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=500">
+<p>Home</p>
+</div>
+
+<div class="category">
+<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=500">
+<p>Books</p>
+</div>
+
+</div>
+
+<!-- PRODUCTS -->
+
+<h2 class="section-title">Featured Products</h2>
+
+<div class="products">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500">
+<h3>Laptop</h3>
+<p>₹50,000</p>
+<button onclick="addToCart('Laptop',50000)">
+Add To Cart
+</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500">
+<h3>Mobile</h3>
+<p>₹20,000</p>
+<button onclick="addToCart('Mobile',20000)">
+Add To Cart
+</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500">
+<h3>Headphones</h3>
+<p>₹2,000</p>
+<button onclick="addToCart('Headphones',2000)">
+Add To Cart
+</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500">
+<h3>Smart Watch</h3>
+<p>₹5,000</p>
+<button onclick="addToCart('Smart Watch',5000)">
+Add To Cart
+</button>
+</div>
+
+</div>
+
+<!-- CART -->
+
+<div class="cart-section">
+
+<h2>Shopping Cart</h2>
+
+<ul id="cartList"></ul>
+
+<h3>
+Total Price: ₹
+<span id="totalPrice">0</span>
+</h3>
+
+</div>
+
+<!-- RECOMMENDATION -->
+
+<div class="recommendation">
+
+<h3>See Personalized Recommendations</h3>
+
+<button>
+Sign In
+</button>
+
+<p>
+New Customer?
+<a href="#">Start Here</a>
+</p>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+<button class="top-btn"
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
+Back To Top
+</button>
+
+<div class="footer-main">
+
+<div>
+<h4>Get To Know Us</h4>
+<p>About Us</p>
+<p>Careers</p>
+<p>Press Releases</p>
+</div>
+
+<div>
+<h4>Connect With Us</h4>
+<p>Facebook</p>
+<p>Instagram</p>
+<p>Twitter</p>
+</div>
+
+<div>
+<h4>Help</h4>
+<p>Your Account</p>
+<p>Shipping Rates</p>
+<p>Returns Centre</p>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 Amazon Clone Project
+</div>
+
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
