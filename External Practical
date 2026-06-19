@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grade Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .container {
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        input {
+            width: 80%;
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Grade Calculator</h2>
+
+        <input type="number" id="s1" placeholder="Subject 1 Marks"><br>
+        <input type="number" id="s2" placeholder="Subject 2 Marks"><br>
+        <input type="number" id="s3" placeholder="Subject 3 Marks"><br>
+        <input type="number" id="s4" placeholder="Subject 4 Marks"><br>
+
+        <button onclick="calculate()">Calculate</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculate() {
+            let total = 0;
+
+            for(let i = 1; i <= 4; i++) {
+                total += Number(document.getElementById("s" + i).value);
+            }
+
+            let average = total / 4;
+            let grade;
+
+            if (average >= 90)
+                grade = "A+";
+            else if (average >= 80)
+                grade = "A";
+            else if (average >= 70)
+                grade = "B";
+            else if (average >= 60)
+                grade = "C";
+            else if (average >= 50)
+                grade = "D";
+            else
+                grade = "F";
+
+            document.getElementById("result").innerHTML =
+                "Total Marks = " + total +
+                "<br>Average = " + average.toFixed(2) +
+                "<br>Grade = " + grade;
+        }
+    </script>
+
+</body>
+</html>
